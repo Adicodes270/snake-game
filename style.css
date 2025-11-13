@@ -1,6 +1,7 @@
 :root {
     /* background colors */
     --bg-primary-color : #0c0c0c;
+    --bg-fill-color: #fdfdfc;
 
     /* text colors */
     --text-primary-color : #f0f0f0;
@@ -12,8 +13,17 @@
     --padding-large : 1.5rem;
     --padding-extra-large : 2rem;
     --padding-xl: 2.5rem;
-    --padding-xl2 : 3rem
- 
+    --padding-xl2 : 3rem;
+    
+    /* border-colors */
+    --border-primary-color: #333333;
+    
+    --border-radius-xs : 0.25rem;
+    --border-radius-sm : 0.5rem;
+    --border-radius-md : 0.75rem;
+    --border-radius-lg : 1rem;
+    --border-radius-xl : 1.25rem;
+    --border-radius-xl2 : 1.5rem;
 }
 
 * {
@@ -40,9 +50,43 @@ main,section{
 
 section {
     padding: var(--padding-xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
 }
 section .infos .info {
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.info {
+    padding: var(--padding-medium);
+}
+
+.info h3 {
+    border: 1px solid var(--border-primary-color);
+    padding: var(--padding-small-2);
+    border-radius: var(--border-radius-sm);
+}
+
+.board {
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
+    
+}
+
+.block {
+    /* width: 30px; */
+    /* height: 30px; */
+    border: 1px solid var(--border-primary-color);
+   
+}
+
+.fill {
+    background-color: var(--bg-fill-color);
 }
