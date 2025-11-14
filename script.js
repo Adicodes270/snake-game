@@ -8,7 +8,7 @@ const rows = Math.floor(board.clientHeight / blockHeight);
 
 const blocks = [];
 const snake = [{ x:1,y:3}, {x:1 ,y:4}, {x:1,y:5}];
-let direction = 'right'
+let direction = 'left'
 
 // for (let i=0 ; i<rows *cols; i++){
 //     const block = document.createElement('div')
@@ -36,5 +36,9 @@ function render(){
 
 setInterval(() => {
     
+    let head = null;
+    if (direction == "left"){
+        head = snake[0]
+    }
     render();
 },300)
